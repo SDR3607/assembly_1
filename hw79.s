@@ -15,7 +15,7 @@ relation_code:
     jae .Lp1_done
     addq $2, %rax
 
-.Lp1_done
+.Lp1_done:
     ret
 
     .globl clamp_long
@@ -101,7 +101,7 @@ recursive_power:
     ret
 
 .Lp5_recurse:
-    pushq %rbq
+    pushq %rbp
     movq %rsp, %rbp
     subq $16, %rsp
     movq %rdi, -8(%rbp)
@@ -122,7 +122,7 @@ combine_helpers:
     movq %rsi, -8(%rbp)
     call helper_square
     movq %rax, -16(%rbp)
-    movq -8(%rbp)< %rdi
+    movq -8(%rbp), %rdi
     call helper_affine
     addq -16(%rbp), %rax
     leave
