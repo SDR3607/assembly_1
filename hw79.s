@@ -10,7 +10,7 @@ relation_code:
     jge .Lp1_check_unsigned
     addq $1, %rax
 
-.lp1_check_unsigned:
+.Lp1_check_unsigned:
     cmpq %rsi, %rdi
     jae .Lp1_done
     addq $2, %rax
