@@ -117,7 +117,7 @@ combine_helpers:
     # TODO: Problem 6
     # %rdi = x, %rsi = y
     pushq %rbp
-    movq $rsp, %rbp
+    movq %rsp, %rbp
     subq $16, %rsp
     movq %rsi, -8(%rbp)
     call helper_square
