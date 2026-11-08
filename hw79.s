@@ -49,7 +49,7 @@ weighted_sum8:
     imulq $2, %rsi
     addq %rsi, %rax
 
-    imulq $3, %rsi
+    imulq $3, %rdx
     addq %rdx, %rax
 
     imulq $4, %rcx
@@ -62,6 +62,10 @@ weighted_sum8:
     addq %r9, %rax
 
     movq 8(%rsp), %r10
+    imulq $7, %r10
+    addq %r10, %rax
+    
+    movq 16(%rsp), %r11
     imulq $8, %r11
     addq %r11, %rax
 
