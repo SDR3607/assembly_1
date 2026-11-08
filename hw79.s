@@ -107,7 +107,7 @@ recursive_power:
     movq %rdi, -8(%rbp)
     subq $1, %rsi
     call recursive_power
-    imulq -8(%rbq), %rax
+    imulq -8(%rbp), %rax
     leave
     ret
 
